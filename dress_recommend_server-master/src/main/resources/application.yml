@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:192.168.0.85:3306/dress
+    username: root
+    password: qhfk0961
+  mvc:
+    static-path-pattern: /static-url/**
+  servlet:
+    multipart:
+      location: C:\finalproject\dress_recommend_server\src\main\resources\static\usedreview
+      max-file-size: 10MB
+      max-request-size: 100MB
+mybatis:
+  mapper-locations: mapper/*.xml
+  type-aliases-package: com.dress.server.dto
+  configuration:
+    map-underscore-to-camel-case: true
+
+#python:
+#  import:
+#    site: false
+python:
+  import:
+    site: false

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dress.server.mapper.ReviewMapper">
+    <!-- #{}는 dto로 값을 받아올때 사용 -->
+    <insert id="addReview">
+        INSERT INTO review(bottom_img_url, create_date, u_pk, top_img_url )
+        VALUES(#{bottomImgUrl}, now(), #{uPk},#{topImgUrl})
+    </insert>
+    <!-- 조회 컬럼명으로 dto에 담긴다.-->
+    <select id="getAllReview" resultType="Review">
+        SELECT a.r_pk, a.bottom_img_url, a.top_img_url, a.create_date, a.content, b.u_id FROM review a INNER JOIN user b ON a.u_pk = b.u_pk
+    </select>
+
+    <select id="getReviewByPk" resultType="Review" parameterType="int">
+        SELECT * FROM review WHERE r_pk=#{rPk}
+    </select>
+
+    <select id="getMyResultByPk" resultType="Review" parameterType="int">
+        SELECT a.r_pk, a.top_img_url, a.bottom_img_url, a.create_date, b.u_id, b.u_pk  FROM review a INNER JOIN user b ON a.u_pk = b.u_pk WHERE a.u_pk=#{upk}
+    </select>
+
+    <delete id="deleteMyResultByPk" parameterType="int">
+        DELETE FROM review WHERE r_pk=#{rPk}
+    </delete>
+
+    <insert id="myReview">
+        INSERT INTO used_review (contents, rating, file_url, title, r_pk ,create_date)
+        VALUES (#{contents}, #{rating}, #{fileUrl}, #{title}, #{rPk} ,now())
+    </insert>
+
+    <select id="getAllUsedReview"  resultType="UsedReview">
+        SELECT * FROM user u
+                          INNER JOIN review r
+                                     ON u.u_pk  = r.u_pk
+                          INNER JOIN used_review ur
+                                     ON r.r_pk  = ur.r_pk
+    </select>
+
+    <select id="getUsedReviewByPk" resultType="UsedReview" parameterType="int">
+        SELECT * FROM user u
+                          INNER JOIN review r
+                                     ON u.u_pk  = r.u_pk
+                          INNER JOIN used_review ur
+                                     ON r.r_pk  = ur.r_pk
+        where r.r_pk = #{rPk}
+    </select>
+</mapper>

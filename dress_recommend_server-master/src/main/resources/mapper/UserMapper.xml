@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dress.server.mapper.UserMapper">
+
+
+    <select id="getAllUser" resultType="User">
+        select * from user
+    </select>
+
+    <insert id="addUser">
+        INSERT INTO user(u_id, u_password, u_name, u_email, u_phon, u_gender) VALUES (#{uId}, #{uPassword},#{uName}, #{uEmail}, #{uPhon}, #{uGender})
+    </insert>
+
+    <select id="getUser" resultType="User">
+        select * from user where u_id=#{uId} and u_password = #{uPassword}
+    </select>
+
+    <select id="getMyInfoByPk" resultType="User" parameterType="int">
+        select * from user where u_pk=#{upk}
+    </select>
+
+    <select id="getIdDoubleCheck" resultType="User" parameterType="String">
+        select * from user where u_id=#{userId}
+    </select>
+
+    <update id="updateMyInfo" >
+        update user set u_password=#{uPassword}, u_email=#{uEmail}, u_phon=#{uPhon} where u_pk=#{uPk}
+    </update>
+
+    <delete id="getDeleteUser">
+        delete from user where u_pk=#{upk}
+    </delete>
+</mapper>
