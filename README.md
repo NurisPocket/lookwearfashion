@@ -17,12 +17,11 @@
 
 <br/>
 
-## 🛠 Skills & Tools
+## 🛠 Skills
 ![JAVA](https://img.shields.io/badge/Java-007396?style=flat-square&logo=Java&logoColor=white)
 ![DJANGO](https://img.shields.io/badge/Django-092E20?style=flat-square&logo=Django&logoColor=white)
 ![REACT](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white)
 ![HTML5](https://img.shields.io/badge/Html5-E34F26?style=flat-square&logo=Html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/Css3-d1572B6?style=flat-square&logo=Css3&logoColor=white)
 ![MARIADB](https://img.shields.io/badge/MariaDB-003545?style=flat-square&logo=MariaDB&logoColor=white)
-
 <br/>
