@@ -19,6 +19,6 @@
 
 ## 🛠 Tools
 ![JAVA](https://img.shields.io/badge/Java-007396?style=flat-square&logo=Java&logoColor=white)
-![DJANGO](https://img.shields.io/badge/Django-007396?style=flat-square&logo=Django&logoColor=white)
-![REACT](https://img.shields.io/badge/React-007396?style=flat-square&logo=React&logoColor=white)
+![DJANGO](https://img.shields.io/badge/Django-092E20?style=flat-square&logo=Django&logoColor=white)
+![REACT](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white)
 <br/>
